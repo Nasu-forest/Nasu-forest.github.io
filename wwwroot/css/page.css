@@ -55,8 +55,16 @@
 img {
     width: 100%;
 }
+.img-twitter {
+    width: auto;
+    height: 3rem;
+}
 .icon-discord {
     width: 70%;
+}
+
+#ul-supervisor {
+    list-style: none;
 }
 
 .btn-discord {
