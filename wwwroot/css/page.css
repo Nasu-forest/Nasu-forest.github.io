@@ -1,0 +1,77 @@
+﻿.container {
+    background-color: black;
+    color: white;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+.section-line {
+    height: 5rem;
+    width: auto;
+}
+
+.section-title {
+    background-color: rgba(102, 1, 102, 0.4);
+    background-image: linear-gradient(to right, rgba(102, 1, 102, 0.4) 0%, black 100%);
+    padding: 8pt 5pt 4pt 7pt;
+    border-radius: 3pt;
+}
+
+.text-box {
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10pt;
+}
+
+.table-ch {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-ch th:last-child {
+    border-right: 1px solid white;
+    width: 70%;
+}
+.table-ch th {
+    text-align: center;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    width: 30%;
+}
+.table-ch td {
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top: none;
+}
+.table-ch td:last-child {
+    border-right: 1px solid white;
+}
+
+img {
+    width: 100%;
+}
+
+.btn-discord {
+    background-color: rgb(88, 101, 243);
+    border-radius: 3px;
+    color: white;
+    width: auto;
+}
+
+/*スマホ*/
+@media (max-width: 640.98px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+
+/*PC*/
+@media (min-width: 641px) {
+    img {
+        width: 70%;
+    }
+}

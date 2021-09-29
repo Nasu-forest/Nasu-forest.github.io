@@ -1,0 +1,104 @@
+﻿@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="./">🌳ナスの森ガイド🌳</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Jump("top"))">
+                <NavLink class="nav-link">
+                    <span class="oi oi-home" aria-hidden="true"></span> トップページ
+                </NavLink>
+            </button>
+        </li>
+
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Jump("join"))">
+                <NavLink class="nav-link">
+                    <span class="oi oi-account-login" aria-hidden="true"></span> 参加方法
+                </NavLink>
+            </button>
+        </li>
+
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Jump("rule"))">
+                <NavLink class="nav-link">
+                    <span class="oi" aria-hidden="true">🌳</span> ナスの森のルール
+                </NavLink>
+            </button>
+        </li>
+
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Jump("supervisor"))">
+                <NavLink class="nav-link">
+                    <span class="oi oi-person" aria-hidden="true"></span> 管理人紹介
+                </NavLink>
+            </button>
+        </li>
+
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Jump("channel"))">
+                <NavLink class="nav-link">
+                    <span class="oi oi-plus" aria-hidden="true"></span> チャンネル紹介
+                </NavLink>
+            </button>
+        </li>
+
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Page("/discord"))">
+                <NavLink class="nav-link">
+                    <span class="oi oi-wrench" aria-hidden="true"></span> Discordの使い方
+                </NavLink>
+            </button>
+        </li>
+
+        @*<li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <button class="nav-link btn-hide" onclick="jump('rule')">
+                <NavLink class="nav-link">
+                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                </NavLink>
+            </button>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </li>*@
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private async Task OnClick_Jump(string id)
+    {
+        if (await JSRuntime.InvokeAsync<string>("getNowUrl") != "/")
+        {
+            NavigationManager.NavigateTo("/", false);
+        }
+
+        await JSRuntime.InvokeVoidAsync("jump", id);
+    }
+    private void OnClick_Page(string page)
+    {
+        NavigationManager.NavigateTo(page, false);
+    }
+}

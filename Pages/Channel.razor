@@ -1,0 +1,222 @@
+﻿<div class="content">
+    <div>
+        <div class="page-title section-title">
+            <h1><strong>チャンネル紹介</strong></h1>
+        </div>
+        <br />
+        <div class="text">
+            <h6>ナスの森では、様々なチャンネルを用意し、可読性を良くしています。<br /></h6>
+            ※ここで紹介するチャンネルは最新でない可能性があります。
+            <br />
+            <br />
+
+            <div class="table-ch-wrapper">
+                <strong>・メインカテゴリー</strong>
+                <table class="table-ch">
+                    <thead>
+                        <tr>
+                            <th>チャンネル名称</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var d in main)
+                        {
+                            <tr>
+                                <td>@d[0]</td>
+                                <td>@d[1]</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+
+                <strong>・チャット部屋</strong>
+                <table class="table-ch">
+                    <thead>
+                        <tr>
+                            <th>チャンネル名称</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var d in chat)
+                        {
+                            <tr>
+                                <td>@d[0]</td>
+                                <td>@d[1]</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+
+                <strong>・ボイチャ部屋</strong>(ボイチャとは)
+                <table class="table-ch">
+                    <thead>
+                        <tr>
+                            <th>チャンネル名称</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var d in voice)
+                        {
+                            <tr>
+                                <td>@d[0]</td>
+                                <td>@d[1]</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+
+                <strong>・分析</strong>
+                <table class="table-ch table-analysis">
+                    <thead>
+                        <tr>
+                            <th>カテゴリー</th>
+                            <th>チャンネル名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="test" rowspan="@(analysis_FX.Length + 1)">FX</td></tr>
+                        @foreach (var d in analysis_FX)
+                        {
+                            <tr>
+                                <td>@d.ToString()</td>
+                            </tr>
+                        }
+                        <tr><td class="test" rowspan="@(analysis_CFD.Length + 1)">CFD</td></tr>
+                        @foreach (var d in analysis_CFD)
+                        {
+                            <tr>
+                                <td>@d.ToString()</td>
+                            </tr>
+                        }
+                        <tr><td class="test" rowspan="@(analysis_virtual.Length + 1)">仮想通貨</td></tr>
+                        @foreach (var d in analysis_virtual)
+                        {
+                            <tr>
+                                <td>@d.ToString()</td>
+                            </tr>
+                        }
+                        <tr><td class="test" rowspan="@(analysis_stock.Length + 1)">株</td></tr>
+                        @foreach (var d in analysis_stock)
+                        {
+                            <tr>
+                                <td>@d.ToString()</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool isTableLoad { get; set; } = false;
+
+    /// <summary>
+    /// メインカテゴリー
+    /// </summary>
+    string[][] main = new string[][]
+    {
+        new string[]{ "入門口🚪", "ナスの森に新しく参加した人を自動でお知らせします。挨拶をしましょう！" },
+        new string[]{ "お知らせ-ニュース欄", "管理人からのお知らせ用です" },
+        new string[]{ "説明", "ナスの森の説明が書いてあります" },
+        new string[]{ "森の管理者🌳", "ナスの森管理者たちの自己紹介をしています" },
+        new string[]{ "よく使うツール", "通過強弱などのトレードに便利なリンクを紹介ししています" },
+        new string[]{ "注目チャート", "狙い目などの注目したいチャートを投稿します" },
+        new string[]{ "⚠🚨要警戒情報🚨⚠", "戦争などトレードに響きそうな大きなニュースや注意を投稿します" },
+        new string[]{ "指標", "指標を自動でお知らせします(※準備中)" },
+    };
+    /// <summary>
+    /// チャット部屋
+    /// </summary>
+    string[][] chat = new string[][]
+    {
+        new string[]{ "雑談", "メインで使われているチャット用のチャンネルです。雑談・投資話などなんでもOKです！" },
+        new string[]{ "フリートーク投資", "投資の話をする際に使用するチャットです" },
+        new string[]{ "質問なんでも", "質問がある方はここへお気軽にしてくだい！" },
+    };
+    /// <summary>
+    /// ボイチャ部屋
+    /// </summary>
+    string[][] voice = new string[][]
+    {
+        new string[]{ "ボイチャ専用チャット", "ボイチャをする際に、画像を投稿したり、聞き専の人が文字で会話する用のチャンネルです" },
+        new string[]{ "勉強部屋チャット", "勉強部屋でボイチャをする際に使用するチャンネルです"},
+        new string[]{ "居酒屋チャット広場", "居酒屋でボイチャをする際に使用するチャンネルです"},
+        new string[]{ "🔈雑談部屋", "メインで使用するボイスチャットの部屋です。聞き専(マイクミュート)の方もお気軽に参加してください！"},
+        new string[]{ "🔈勉強部屋", "ボイスチャットで勉強をする際に使用する部屋です"},
+        new string[]{ "🔈居酒屋", "お酒を飲みながらボイスチャットする際に使用するチャンネルです"},
+    };
+    /// <summary>
+    /// K目線部屋
+    /// </summary>
+    string[][] k91 = new string[][]
+    {
+        new string[]{ "✩中長期✩", "管理人Kさんが中長期目線の分析を貼ります" },
+    };
+    /// <summary>
+    /// FX分析
+    /// </summary>
+    string[] analysis_FX = new string[]
+    {
+        "ドル円🇺🇸🇯🇵",
+        "ユーロ円🇪🇺🇯🇵",
+        "豪ドル円🇦🇺🇯🇵",
+        "ポンド円🇬🇧🇯🇵",
+        "フラン円🇨🇭🇯🇵",
+        "カナダ円🇨🇦🇯🇵",
+        "キウイ円🇳🇿🇯🇵",
+        "ゴールド🥇",
+        "シルバー🥈",
+        "ユーロドル🇪🇺🇺🇸",
+        "ポンドドル🇬🇧🇺🇸",
+        "ユーロポンド🇪🇺🇬🇧",
+        "ドルカナダ🇺🇸🇨🇦",
+        "マイナー通過(その他)",
+    };
+    /// <summary>
+    /// CFD分析
+    /// </summary>
+    string[] analysis_CFD = new string[]
+    {
+        "日経",
+        "ダウ",
+        "ナスダック",
+        "原油",
+    };
+    /// <summary>
+    /// 仮想通貨分析
+    /// </summary>
+    string[] analysis_virtual = new string[]
+    {
+        "btc",
+        "eth",
+        "bnb",
+        "dot",
+        "doge",
+        "cake🍰",
+        "bake🍞",
+        "マイナー仮想通貨",
+    };
+    /// <summary>
+    /// 株分析
+    /// </summary>
+    string[] analysis_stock = new string[]
+    {
+        "個別株",
+    };
+
+    private void Onclick_load()
+    {
+        isTableLoad = true;
+    }
+
+}
