@@ -23,6 +23,7 @@
     background-color: aliceblue;
     padding: 20px;
     border-radius: 10pt;
+    color: black;
 }
 
 .table-ch {
@@ -40,7 +41,7 @@
     border-left: 1px solid white;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
-    width: 30%;
+    width: 40%;
 }
 .table-ch td {
     border-left: 1px solid white;
@@ -53,6 +54,9 @@
 
 img {
     width: 100%;
+}
+.icon-discord {
+    width: 70%;
 }
 
 .btn-discord {
