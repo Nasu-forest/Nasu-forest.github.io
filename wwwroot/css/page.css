@@ -33,7 +33,7 @@
     border-radius: 5px;
 }
 
-.table-ch th, td {
+.table-ch th, .table-ch td {
     border: 1px solid #3a0647;
     border-radius: 10px;
     padding: 5px;
@@ -70,7 +70,6 @@
 .table-ch td:last-child {
     border-right: 1px solid white;
 }*/
-
 img {
     width: 100%;
 }
