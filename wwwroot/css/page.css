@@ -1,5 +1,5 @@
 ﻿.container {
-    background-color: black;
+    background-color: rgb(0, 0, 43);
     color: white;
     width: auto;
     height: auto;
@@ -14,7 +14,7 @@
 
 .section-title {
     background-color: rgba(102, 1, 102, 0.4);
-    background-image: linear-gradient(to right, rgba(102, 1, 102, 0.4) 0%, black 100%);
+    background-image: linear-gradient(to right, rgba(102, 1, 102, 0.4) 0%, rgb(0, 0, 43) 100%);
     padding: 8pt 5pt 4pt 7pt;
     border-radius: 3pt;
 }
@@ -29,12 +29,29 @@
 .table-ch {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0;
+    /*border-spacing: 0.1rem;*/
+    border-radius: 5px;
 }
 
+.table-ch th, td {
+    border: 1px solid #3a0647;
+    border-radius: 10px;
+    padding: 5px;
+}
 .table-ch th:last-child {
+    width: 70%;
+}
+.table-ch th {
+    text-align: center;
+    background-color: #3a0647;
+    border-radius: 15px;
+}
+
+/*.table-ch th:last-child {
     border-right: 1px solid white;
     width: 70%;
+    border-radius: 5px;
+    border: 1px solid white;
 }
 .table-ch th {
     text-align: center;
@@ -42,15 +59,17 @@
     border-bottom: 1px solid white;
     border-top: 1px solid white;
     width: 40%;
+    border-radius: 5px;
 }
 .table-ch td {
+    border-radius: 5px;
     border-left: 1px solid white;
     border-bottom: 1px solid white;
     border-top: none;
 }
 .table-ch td:last-child {
     border-right: 1px solid white;
-}
+}*/
 
 img {
     width: 100%;
