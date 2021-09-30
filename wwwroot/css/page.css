@@ -116,6 +116,10 @@ img {
     .container {
         padding: 0 0.5rem;
     }
+
+    .section-title h1 {
+        font-size: 30px;
+    }
 }
 
 /*PC*/
