@@ -74,6 +74,13 @@ img {
     width: auto;
 }
 
+.header {
+    color: rgb(238, 238, 238);
+}
+    .header a {
+        color: rgb(238, 238, 238);
+    }
+
 /*スマホ*/
 @media (max-width: 640.98px) {
     .container {

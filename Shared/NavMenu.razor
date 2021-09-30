@@ -51,7 +51,7 @@
         </li>
 
         <li class="nav-item px-3">
-            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Page("/discord"))">
+            <button class="nav-link btn-hide" @onclick="@(s => OnClick_Jump("discord"))">
                 <NavLink class="nav-link">
                     <span class="oi oi-wrench" aria-hidden="true"></span> Discordの使い方
                 </NavLink>
@@ -90,6 +90,8 @@
 
     private async Task OnClick_Jump(string id)
     {
+
+        var a = ((System.Reflection.AssemblyCopyrightAttribute[])typeof(Nasu_forest.Pages.Index).Assembly.GetCustomAttributes(typeof(System.Reflection.AssemblyCopyrightAttribute), false))[0].Copyright.ToString();
         if (await JSRuntime.InvokeAsync<string>("getNowUrl") != "/")
         {
             NavigationManager.NavigateTo("/", false);

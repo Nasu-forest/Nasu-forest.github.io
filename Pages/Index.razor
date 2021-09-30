@@ -31,5 +31,23 @@
             <Channel />
         </div>
         <div class="section-line"></div>
+
+        <!--Discrod使い方-->
+        <div id="discord" class="discord-wrapper">
+            <Discord />
+        </div>
+        <div class="section-line"></div>
     </div>
 </div>
+<div class="container header">
+    @Copyright
+    <br />
+    Ver.@Version
+    <br />
+    Repository <a href="https://github.com/Nasu-forest/Nasu-forest.github.io"><u>https://github.com/Nasu-forest/Nasu-forest.github.io</u></a>
+</div>
+
+@code {
+    private string Version = typeof(Nasu_forest.Pages.Index).Assembly.GetName().Version.ToString();
+    private string Copyright = ((System.Reflection.AssemblyCopyrightAttribute[])typeof(Nasu_forest.Pages.Index).Assembly.GetCustomAttributes(typeof(System.Reflection.AssemblyCopyrightAttribute), false))[0].Copyright.ToString();
+}
