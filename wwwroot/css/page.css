@@ -74,12 +74,23 @@ img {
     width: auto;
 }
 
+.btn-join {
+    background-color: rgb(88, 101, 243);
+    border-radius: 10px;
+    height: 3rem;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+}
+
 .header {
     color: rgb(238, 238, 238);
 }
-    .header a {
-        color: rgb(238, 238, 238);
-    }
+.header a {
+    color: rgb(238, 238, 238);
+}
 
 /*スマホ*/
 @media (max-width: 640.98px) {

@@ -90,8 +90,6 @@
 
     private async Task OnClick_Jump(string id)
     {
-
-        var a = ((System.Reflection.AssemblyCopyrightAttribute[])typeof(Nasu_forest.Pages.Index).Assembly.GetCustomAttributes(typeof(System.Reflection.AssemblyCopyrightAttribute), false))[0].Copyright.ToString();
         if (await JSRuntime.InvokeAsync<string>("getNowUrl") != "/")
         {
             NavigationManager.NavigateTo("/", false);
