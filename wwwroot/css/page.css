@@ -34,7 +34,7 @@
 }
 
 .table-ch th, .table-ch td {
-    border: 1px solid #3a0647;
+    border: 1px solid rgba(102, 1, 102, 0.4);
     border-radius: 10px;
     padding: 5px;
 }
@@ -43,7 +43,7 @@
 }
 .table-ch th {
     text-align: center;
-    background-color: #3a0647;
+    background-color: rgba(102, 1, 102, 0.4);
     border-radius: 15px;
 }
 
