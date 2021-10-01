@@ -110,6 +110,26 @@ img {
     color: rgb(238, 238, 238);
 }
 
+/*.cheat-box h3 {
+    background-color: rgb(88, 101, 243);
+    border-radius: 10px;
+    padding: 5px;
+    width: auto;
+}*/
+
+.table-cheat td{
+    display: block;
+}
+.table-cheat td:first-child {
+    font-size: 25px;
+    background-color: orange;
+}
+.table-cheat td:last-child {
+    background-color: pink;
+    margin: 0, 0, 1rem, 0.5rem;
+}
+
+
 /*スマホ*/
 @media (max-width: 640.98px) {
     .container {
